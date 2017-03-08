@@ -68,6 +68,13 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
     @Override
     public void paintComponent(Graphics g){
         super.paintComponent(g);
+        ball.paint(g);
+        player.paint(g);
         //g.drawString(iterator, WIDTH, WIDTH);
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

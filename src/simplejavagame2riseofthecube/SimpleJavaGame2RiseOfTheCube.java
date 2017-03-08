@@ -14,7 +14,7 @@ public class SimpleJavaGame2RiseOfTheCube extends JFrame{
      * Constructor for the JFrame
      */
     public SimpleJavaGame2RiseOfTheCube(){
-        setSize(WIDTH, HEIGHT);
+        setSize(HEIGHT, WIDTH);
         setTitle("Pong");
         setBackground(Color.WHITE);
         setResizable(false);
