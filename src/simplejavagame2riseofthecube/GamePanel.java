@@ -17,14 +17,14 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
     private int score;
     
     public GamePanel(SimpleJavaGame2RiseOfTheCube game){
-        setBackground(Color.BLACK);
+        setBackground(Color.DARK_GRAY);
         this.game = game;
         ball = new Ball(game);
         player = new Player(game, KeyEvent.VK_W, KeyEvent.VK_S, 20, 20);
-        Timer timer = new Timer(5, (ActionListener) this);
+        Timer timer = new Timer(5, this);
         timer.start();
-        addKeyListener((KeyListener) this);
-        setFocusable(true);
+        addKeyListener(this);
+        //setFocusable(true);
     }
     
     /**

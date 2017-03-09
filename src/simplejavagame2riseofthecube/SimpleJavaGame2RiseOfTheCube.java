@@ -15,13 +15,14 @@ public class SimpleJavaGame2RiseOfTheCube extends JFrame{
      */
     public SimpleJavaGame2RiseOfTheCube(){
         setSize(HEIGHT, WIDTH);
-        setTitle("Pong");
-        setBackground(Color.WHITE);
-        setResizable(false);
-        setVisible(true);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setTitle("Rise Of the Cube");
         panel = new GamePanel(this);
         add(panel);
+        setBackground(Color.BLACK);
+        setResizable(true);
+        setVisible(true);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        
     }
     
     /**
