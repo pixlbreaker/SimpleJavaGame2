@@ -20,11 +20,12 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
         setBackground(Color.DARK_GRAY);
         this.game = game;
         ball = new Ball(game);
-        player = new Player(game, KeyEvent.VK_W, KeyEvent.VK_S, 20, 20);
+        player = new Player(game, KeyEvent.VK_W, KeyEvent.VK_S, KeyEvent.VK_D, 
+                KeyEvent.VK_A, 20, 20);
         Timer timer = new Timer(5, this);
         timer.start();
         addKeyListener(this);
-        //setFocusable(true);
+        setFocusable(true);
     }
     
     /**
@@ -58,6 +59,7 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
     }
 
     public void keyPressed(KeyEvent e){
+        System.out.println(e.getKeyCode());
         player.pressed(e.getKeyCode());
     }
     
@@ -75,6 +77,6 @@ public class GamePanel extends JPanel implements ActionListener, KeyListener{
 
     @Override
     public void keyTyped(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //sthrow new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

@@ -8,7 +8,7 @@ public class Player {
     // Variables
     private static final int WIDTH = 15, HEIGHT =15;
     private SimpleJavaGame2RiseOfTheCube game;
-    private int up, down;
+    private int up, down, left, right;
     private int x, xa, y, ya;
     
     /**
@@ -19,10 +19,13 @@ public class Player {
      * @param x
      * @param y 
      */
-    public Player(SimpleJavaGame2RiseOfTheCube game, int up, int down, int x, int y){
+    public Player(SimpleJavaGame2RiseOfTheCube game, int up, int down, 
+            int right, int left, int x, int y){
         this.game = game;
         this.x = x; 
         y = game.getHeight() / 2;
+        this.left = left;
+        this.right = right;
         this.up = up;
         this.down = down;
     }
@@ -31,7 +34,19 @@ public class Player {
      * Update Function
      */
     public void update(){
-        //if (y >)
+        if (y > 0 && y < game.getHeight() - HEIGHT - 29)
+            y += ya;
+        else if (y == 0)
+            y++;
+        else if (y == game.getHeight() - HEIGHT - 29)
+            y--;
+        
+        if (x > 0 && x < game.getWidth() - WIDTH -29)
+            x += xa;
+        else if (x == 0)
+            x++;
+        else if (x == game.getWidth() - WIDTH -29)
+            x--;
     }
     
     /**
@@ -40,9 +55,14 @@ public class Player {
      */
     public void pressed (int keyCode){
         if (keyCode == up)
-            ya = -1;
+            ya = -2;
         else if (keyCode == down)
-            ya = 1;
+            ya = 2;
+        else if (keyCode == right)
+            xa = 2;
+        else if (keyCode ==left)
+            xa = -2;
+            
     }
     
     /**
@@ -50,8 +70,8 @@ public class Player {
      * @param keyCode 
      */
     public void released (int keyCode){
-        if (keyCode == up || keyCode == down)
-            ya = 0;
+//        if (keyCode == up || keyCode == down)
+//            ya = 0;
     }
     
     /**
